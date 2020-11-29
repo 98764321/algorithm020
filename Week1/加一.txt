@@ -1,0 +1,22 @@
+/*
+    我的思路: 放置一个Index,描述进位，每次根据 Index 判断当前位置是否要加1， 通过%10判断是否有进位，
+
+*/
+class Solution {
+    public int[] plusOne(int[] digits) {
+        int length = digits.length;
+        int index = 0;
+
+        for(int i = length-1; i >=0; i--){
+            digits[i]++;     
+            digits[i] %= 10;
+            if(digits[i]!=0){
+               return digits;
+            }
+        }
+
+        digits = new int[length+1];
+        digits[0] = 1;
+        return digits;
+    }
+}
